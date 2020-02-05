@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <h1>SUPER LIST</h1>
+        <ul>
+           <li v-for="item in items" type="A"> {{item}}</li>
+        </ul>
+    </div>
+    <input type="text" v-model="newItem">
+    <button class="button is-primary" @click="addItem">ADD</button>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+var vue= new Vue({
+    el:'#app',
+    data:{
+        items:['Piim','Juust','Viin','Muu'],
+        newItem:''
+    },
+    methods:{
+      addItem(){
+        this.items.push(this.newItem);
+        this.newItem='';
+      }
+    },
+    computed:{
+        reversedName(){
+            return this.name.split('').reverse().join('');
+        }
+    }
+});
+</script>
+</body>
+</html>
