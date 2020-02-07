@@ -1,0 +1,8 @@
+$color: #357;
+$textColorInDiv: red;
+html,body{
+  background-color: $color;
+}
+div{
+  color: $textColorInDiv;
+}
